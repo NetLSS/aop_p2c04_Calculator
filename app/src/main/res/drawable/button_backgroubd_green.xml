@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- ripple : 물결 효과
+리플은 백그라운드 컬러를 따로 주어야함
+- item android:id="@android:id/background"
+- corners : 원형 (아무리 큰 값주어도 원형 이상으로 깍이지 않는다)
+- stroke : 테두리
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/buttonPressGray">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/green"/>
+            <corners android:radius="100dp"/>
+            <stroke android:width="1dp"
+                android:color="@color/greenPress"/>
+        </shape>
+    </item>
+</ripple>
