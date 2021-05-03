@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import java.lang.NumberFormatException
 import kotlin.math.exp
 
 class MainActivity : AppCompatActivity() {
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         // TODO resultTextView 실시간으로 계산 결과를 넣어야 하는 기능
 
+
     }
 
     private fun operatorButtonClicked(operator: String) {
@@ -114,6 +116,30 @@ class MainActivity : AppCompatActivity() {
 
     fun resultButtonClicked(v: View) {
 
+    }
+
+    private fun calculateExpression(): String {
+        // ExpressionTextView 에서 가져온 내용으로 계산한 결과 반환
+        val expressionTexts = expressionTextView.text.split(" '")
+
+        if (hasOperator.not() || expressionTexts.size != 3) {
+            return ""
+        } else if (expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not()) {
+            return ""
+        }
+
+        val exp1 = expressionTexts[0].toBigInteger()
+        val exp2 = expressionTexts[2].toBigInteger()
+        val op = expressionTexts[1]
+
+        return when (op) {
+            "+" -> (exp1 + exp2).toString()
+            "-" -> (exp1 - exp2).toString()
+            "*" -> (exp1 * exp2).toString()
+            "/" -> (exp1 / exp2).toString()
+            "%" -> (exp1 % exp2).toString()
+            else -> ""
+        }
     }
 
     fun historyButtonClicked(v: View) {
