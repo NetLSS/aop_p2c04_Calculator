@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateExpression(): String {
         // ExpressionTextView 에서 가져온 내용으로 계산한 결과 반환
-        val expressionTexts = expressionTextView.text.split(" '")
+        val expressionTexts = expressionTextView.text.split(" ")
 
         if (hasOperator.not() || expressionTexts.size != 3) {
             return ""

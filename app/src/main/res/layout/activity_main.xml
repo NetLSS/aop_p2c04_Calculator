@@ -145,6 +145,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
                 android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
                 android:text="8"
                 android:textColor="@color/textColor"
                 android:textSize="24sp" />
@@ -191,6 +192,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
                 android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
                 android:text="5"
                 android:textColor="@color/textColor"
                 android:textSize="24sp" />
@@ -237,6 +239,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
                 android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
                 android:text="2"
                 android:textColor="@color/textColor"
                 android:textSize="24sp" />
@@ -290,6 +293,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
                 android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
                 android:text="0"
                 android:textColor="@color/textColor"
                 android:textSize="24sp" />
