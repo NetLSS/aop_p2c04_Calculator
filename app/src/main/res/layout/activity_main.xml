@@ -21,6 +21,9 @@
         app:layout_constraintBottom_toTopOf="@id/keypadTabLayout"
         />
 
+    <!--
+    android:shrinkColumns="*" : 안에 있는 컬럼들이 알맞은 사이즈를 가지도록 추가
+    -->
     <TableLayout
         android:id="@+id/keypadTabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +32,32 @@
         app:layout_constraintTop_toBottomOf="@id/topLayout"
         app:layout_constraintVertical_weight="1.5"
         android:layout_width="0dp"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:shrinkColumns="*">
+
+        <TableRow android:layout_weight="1">
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+            <Button/>
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+        </TableRow>
 
     </TableLayout>
 
