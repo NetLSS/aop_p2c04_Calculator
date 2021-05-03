@@ -27,6 +27,10 @@
         android:id="@+id/keypadTabLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingStart="15dp"
+        android:paddingTop="21dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="21dp"
         android:shrinkColumns="*"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,38 +43,228 @@
             state list animator 이 정의 되어서 버튼 기본색이 보라색으로 되어버림
             1. AppCompatButton 를 사용하거나
             2. android:stateListAnimator="@null"
+
+            이벤트 처리기
+            xml 뷰바인드 하여 직접 코드랑 연결
+            함수를 하나 연결하고 함수 내부에서 id를 가져와 맞는 기능을 수행하도록 구현 할것임
+
+            android:stateListAnimator="@null" : 에니메이션 제거
             -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="clearButtonClicked"
+                android:text="C"
+                android:textSize="24sp" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="7dp"
                 android:background="@drawable/button_background"
-                android:text="C"
+                android:clickable="false"
+                android:enabled="false"
+                android:text="( )"
+                android:textColor="@color/green"
                 android:textSize="24sp" />
 
-            <!--            <Button />-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="%"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
 
-            <!--            <Button />-->
-
-            <!--            <Button />-->
-
-            <!--            <Button />-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="÷"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow android:layout_weight="1">
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="7"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:text="8"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="9"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="x"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="4"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:text="5"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="6"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="-"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="1"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:text="2"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="3"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="buttonClicked"
+                android:text="+"
+                android:textColor="@color/green"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow android:layout_weight="1">
+            <!--
+            AppCompatImageButton : 백그라운드와 이미지를 동시에 사용하기 위해
+            drawbla에 백터 자원 추가
+            또는
+            android:src="@android:drawable/ic_menu_recent_history" 해도 되네 ㅋㅋ
 
+            -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/historyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="historyButtonClicked"
+                android:text="기호"
+                android:src="@drawable/ic_baseline_history_24"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:text="0"
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:clickable="false"
+                android:enabled="false"
+                android:text="."
+                android:textColor="@color/textColor"
+                android:textSize="24sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:onClick="resultButtonClicked"
+                android:text="="
+                android:textColor="@color/green"
+                android:textSize="24sp" />
         </TableRow>
 
     </TableLayout>
