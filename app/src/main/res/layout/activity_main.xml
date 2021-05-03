@@ -35,16 +35,26 @@
         app:layout_constraintVertical_weight="1.5">
 
         <TableRow android:layout_weight="1">
+            <!--
+            state list animator 이 정의 되어서 버튼 기본색이 보라색으로 되어버림
+            1. AppCompatButton 를 사용하거나
+            2. android:stateListAnimator="@null"
+            -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="@drawable/button_background"
+                android:text="C"
+                android:textSize="24sp" />
 
-            <Button />
+            <!--            <Button />-->
 
-            <Button />
+            <!--            <Button />-->
 
-            <Button />
+            <!--            <Button />-->
 
-            <Button />
-
-            <Button />
+            <!--            <Button />-->
         </TableRow>
 
         <TableRow android:layout_weight="1">
