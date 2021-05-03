@@ -114,7 +114,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun resultButtonClicked(v: View) {
+        val expressionTexts = expressionTextView.text.split(" ")
 
+        if (expressionTextView.text.isEmpty() || expressionTexts.size == 1){ // 1: 숫자만 들어온 경우
+            return
+        }
+
+        if (expressionTexts.size != 3 && hasOperator){
+            // 숫자와 연산자까지만 입력되고 마지막 값이 안온경우
+            Toast.makeText(this, "아직 완성되지 않은 수식입니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not()){
+            Toast.makeText(this, "오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val expressionText = expressionTextView.text.toString()
+        val resultText = calculateExpression()
+
+        resultTextView.text = ""
+        expressionTextView.text = resultText // 계산 결과값 올리기
+
+        isOperator = false
+        hasOperator = false
     }
 
     private fun calculateExpression(): String {
