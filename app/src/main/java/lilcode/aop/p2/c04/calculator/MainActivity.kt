@@ -124,3 +124,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+// 확장 함수 정의
+fun String.isNumber(): Boolean {
+    return try {
+        this.toBigInteger() // 무한대 까지 저장 가능한 자료형
+        true
+    } catch (e: NumberFormatException) {
+        false
+    }
+}
