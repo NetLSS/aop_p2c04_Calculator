@@ -11,19 +11,19 @@ import lilcode.aop.p2.c04.calculator.model.History
 @Dao
 interface HistoryDao {
 
-    @Query("SELECT * FROM history") // 쿼리문 작성
+    @Query("SELECT * FROM history_table") // 쿼리문 작성
     fun getAll(): List<History>
 
     @Insert
     fun insertHistory(history: History)
 
-    @Query("DELETE FROM history") // 테이블 전체 삭제
+    @Query("DELETE FROM history_table") // 테이블 전체 삭제
     fun deleteAll()
 
     @Delete // 해당 히스트로리만 제거
     fun delete(history: History)
 
     // 조건 가진 결과만 가져오기 (1개만)
-    @Query("SELECT * FROM History WHERE result LIKE :result LIMIT 1")
+    @Query("SELECT * FROM history_table WHERE result LIKE :result LIMIT 1")
     fun findByResult(result: String): History
 }

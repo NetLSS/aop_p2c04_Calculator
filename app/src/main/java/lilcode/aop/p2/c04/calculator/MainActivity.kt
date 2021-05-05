@@ -213,6 +213,8 @@ class MainActivity : AppCompatActivity() {
                 // 레이아웃 인플레이터 기능 사용 해보기
                 // ui 스레드 열기
                 runOnUiThread {
+                    // 핸들러에 포스팅될 내용 작성
+
                     // R.layout.history_row 에서 인플레이트를 시킴., root랑 attachToRoot. 나중에 addview를 통해 붙일거라 null, false
                     val historyView =
                         LayoutInflater.from(this).inflate(R.layout.history_row, null, false)
