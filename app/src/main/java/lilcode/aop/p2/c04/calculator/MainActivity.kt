@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 히스토리 리니어 레이아웃
-    private val historyLinearLayout: View by lazy {
-        findViewById<View>(R.id.historyLinearLayout)
+    private val historyLinearLayout: LinearLayout by lazy {
+        findViewById<LinearLayout>(R.id.historyLinearLayout)
     }
 
     private var isOperator = false // 오퍼레이터 입력하다 왔는지 체크
