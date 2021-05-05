@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
+import androidx.room.Room
 import java.lang.NumberFormatException
 import kotlin.math.exp
 
@@ -38,12 +39,19 @@ class MainActivity : AppCompatActivity() {
     private var isOperator = false // 오퍼레이터 입력하다 왔는지 체크
     private var hasOperator = false // 현재는 연산자 1번만 사용 가능 하도록.
 
-
+    lateinit var db: AppDatabase // 전역
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // 다크 테마 NO
         setContentView(R.layout.activity_main)
+
+        // onCrate 시 db 변수에 앱데이터베이스 빌드해서 할당
+        db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            "historyDB"
+        ).build()
     }
 
     fun buttonClicked(v: View) {
@@ -148,6 +156,8 @@ class MainActivity : AppCompatActivity() {
 
         val expressionText = expressionTextView.text.toString()
         val resultText = calculateExpression()
+
+        // TODO :  디비에 넣어주는 부분
 
         resultTextView.text = ""
         expressionTextView.text = resultText // 계산 결과값 올리기
