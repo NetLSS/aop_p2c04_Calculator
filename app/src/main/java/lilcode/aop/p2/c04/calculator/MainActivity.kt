@@ -231,8 +231,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun historyClearButtonClicked(v: View){
-        // TODO: 디비에서 모든 기록 삭제
-        // TODO: 뷰에서 모든 기록 삭제
+        // 디비에서 모든 기록 삭제
+        // 뷰에서 모든 기록 삭제
+        historyLinearLayout.removeAllViews()
+        Thread(Runnable {
+            db.historyDao().deleteAll()
+        }).start()
     }
 
     fun clearButtonClicked(v: View) {
