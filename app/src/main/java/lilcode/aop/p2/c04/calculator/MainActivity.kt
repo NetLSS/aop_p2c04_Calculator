@@ -38,6 +38,8 @@ class MainActivity : AppCompatActivity() {
     private var isOperator = false // 오퍼레이터 입력하다 왔는지 체크
     private var hasOperator = false // 현재는 연산자 1번만 사용 가능 하도록.
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // 다크 테마 NO
