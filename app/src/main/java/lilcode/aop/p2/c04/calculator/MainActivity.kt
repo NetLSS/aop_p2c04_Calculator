@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
 import androidx.room.Room
+import lilcode.aop.p2.c04.calculator.model.History
 import java.lang.NumberFormatException
 import kotlin.math.exp
 
@@ -157,7 +158,13 @@ class MainActivity : AppCompatActivity() {
         val expressionText = expressionTextView.text.toString()
         val resultText = calculateExpression()
 
-        // TODO :  디비에 넣어주는 부분
+        // 디비에 넣어주는 부분
+        // DB 입출력 과정은 메인스레드 외 추가 스레드에서 해야함
+        // Thread 에는 Runnable 구현체가 들어감
+        Thread(Runnable{
+            // uid: null 로주어도 기본키라 자동으로 +1되서 들어감
+            db.historyDao().insertHistory(History(null, expressionText, resultText))
+        }).start()
 
         resultTextView.text = ""
         expressionTextView.text = resultText // 계산 결과값 올리기
