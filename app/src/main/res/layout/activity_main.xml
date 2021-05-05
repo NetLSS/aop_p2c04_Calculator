@@ -358,7 +358,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/closeButton">
-
+            <!--
+            스크롤 뷰 내부에 레이아웃 필요.
+            LinearLayout을 사용했는데 layout_height 속성은 wrap_content 권장
+            스크롤 뷰에서 알아서 보이도록 할 것이므로
+            -->
             <LinearLayout
                 android:id="@+id/historyLinearLayout"
                 android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.isVisible
 import java.lang.NumberFormatException
 import kotlin.math.exp
 
@@ -22,6 +23,16 @@ class MainActivity : AppCompatActivity() {
     // 실시간결과 텍스트뷰
     private val resultTextView: TextView by lazy {
         findViewById<TextView>(R.id.resultTextView)
+    }
+
+    // 히스토리 레이아웃
+    private val historyLayout: View by lazy {
+        findViewById<View>(R.id.historyLayout)
+    }
+
+    // 히스토리 리니어 레이아웃
+    private val historyLinearLayout: View by lazy {
+        findViewById<View>(R.id.historyLinearLayout)
     }
 
     private var isOperator = false // 오퍼레이터 입력하다 왔는지 체크
@@ -169,6 +180,19 @@ class MainActivity : AppCompatActivity() {
 
     fun historyButtonClicked(v: View) {
 
+        historyLayout.isVisible = true
+
+        // TODO: 디비에서 모든 기록 가져오기
+        // TODO: 뷰에 모든 기록 할당하기
+    }
+
+    fun closeHistoryButtonClicked(v: View){
+        historyLayout.isVisible = false
+    }
+
+    fun historyClearButtonClicked(v: View){
+        // TODO: 디비에서 모든 기록 삭제
+        // TODO: 뷰에서 모든 기록 삭제
     }
 
     fun clearButtonClicked(v: View) {
