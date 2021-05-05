@@ -142,17 +142,17 @@ class MainActivity : AppCompatActivity() {
     fun resultButtonClicked(v: View) {
         val expressionTexts = expressionTextView.text.split(" ")
 
-        if (expressionTextView.text.isEmpty() || expressionTexts.size == 1){ // 1: 숫자만 들어온 경우
+        if (expressionTextView.text.isEmpty() || expressionTexts.size == 1) { // 1: 숫자만 들어온 경우
             return
         }
 
-        if (expressionTexts.size != 3 && hasOperator){
+        if (expressionTexts.size != 3 && hasOperator) {
             // 숫자와 연산자까지만 입력되고 마지막 값이 안온경우
             Toast.makeText(this, "아직 완성되지 않은 수식입니다.", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not()){
+        if (expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not()) {
             Toast.makeText(this, "오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
             return
         }
@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
         // 디비에 넣어주는 부분
         // DB 입출력 과정은 메인스레드 외 추가 스레드에서 해야함
         // Thread 에는 Runnable 구현체가 들어감
-        Thread(Runnable{
+        Thread(Runnable {
             // uid: null 로주어도 기본키라 자동으로 +1되서 들어감
             db.historyDao().insertHistory(History(null, expressionText, resultText))
         }).start()
@@ -228,11 +228,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun closeHistoryButtonClicked(v: View){
+    fun closeHistoryButtonClicked(v: View) {
         historyLayout.isVisible = false
     }
 
-    fun historyClearButtonClicked(v: View){
+    fun historyClearButtonClicked(v: View) {
         // 디비에서 모든 기록 삭제
         // 뷰에서 모든 기록 삭제
         historyLinearLayout.removeAllViews()
