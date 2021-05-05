@@ -14,16 +14,18 @@ import kotlin.math.exp
 
 class MainActivity : AppCompatActivity() {
 
+    // 계산식 텍스트뷰
     private val expressionTextView: TextView by lazy {
         findViewById<TextView>(R.id.expressionTextView)
     }
 
+    // 실시간결과 텍스트뷰
     private val resultTextView: TextView by lazy {
         findViewById<TextView>(R.id.resultTextView)
     }
 
     private var isOperator = false // 오퍼레이터 입력하다 왔는지 체크
-    private var hasOperator = false
+    private var hasOperator = false // 현재는 연산자 1번만 사용 가능 하도록.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         when {
-            isOperator -> {
+            isOperator -> { // 연산자를 입력하다 온 경우에는 연산자 수정
                 val text = expressionTextView.text.toString()
                 expressionTextView.text = text.dropLast(1) + operator
             }
