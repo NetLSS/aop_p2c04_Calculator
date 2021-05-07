@@ -2,7 +2,7 @@
 
 # 나의 블로그 포스팅
 저의 블로그에 작성된  [Room 을 사용한 로컬 데이터베이스](https://whyprogrammer.tistory.com/573)을 통해 더욱 내용을 볼 수 있습니다.
-
+저의 블로그에 작성된 [계산기 어플 앱 만들기 with 코틀린](https://whyprogrammer.tistory.com/574)를 통해 더욱 자세한 개발 내용을 확인할 수 있습니다.
 
 # 목차
 
